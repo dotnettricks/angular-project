@@ -11,8 +11,8 @@ namespace edTech.APIs.Controllers
     [ApiController]
     public class MentorController : ControllerBase
     {
-        IMentorService _mentorService;
-        public MentorController(IMentorService mentorService)
+        IService<Mentor> _mentorService;
+        public MentorController(IService<Mentor> mentorService)
         {
             _mentorService = mentorService;
         }
@@ -20,7 +20,7 @@ namespace edTech.APIs.Controllers
         [HttpGet]
         public IEnumerable<Mentor> GetMentors()
         {
-            return _mentorService.GetMentors();
+            return _mentorService.GetAll();
         }
 
         [HttpPost]
@@ -28,7 +28,7 @@ namespace edTech.APIs.Controllers
         {
             try
             {
-                _mentorService.AddMentor(model);
+                _mentorService.Add(model);
                 return StatusCode(StatusCodes.Status201Created);
             }
             catch (Exception ex)

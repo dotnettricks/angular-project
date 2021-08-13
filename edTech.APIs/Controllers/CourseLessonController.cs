@@ -13,26 +13,26 @@ namespace edTech.APIs.Controllers
     [Route("api/[controller]/[action]")]
     [ApiController]
     [CustomAuthorize]
-    public class CourseController : ControllerBase
+    public class CourseTopicController : ControllerBase
     {
-        IService<Course> _courseService;
-        public CourseController(IService<Course> courseService)
+        IService<CourseTopic> _courseTopic;
+        public CourseTopicController(IService<CourseTopic> courseTopic)
         {
-            _courseService = courseService;
+            _courseTopic = courseTopic;
         }
 
         [HttpGet]
-        public IEnumerable<Course> GetCourses()
+        public IEnumerable<CourseTopic> GetTopics()
         {
-            return _courseService.GetAll();
+            return _courseTopic.GetAll();
         }
 
         [HttpPost]
-        public IActionResult AddCourse(Course model)
+        public IActionResult AddTopic(CourseTopic model)
         {
             try
             {
-                _courseService.Add(model);
+                _courseTopic.Add(model);
                 return StatusCode(StatusCodes.Status201Created);
             }
             catch (Exception ex)

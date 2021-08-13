@@ -12,16 +12,16 @@ namespace edTech.APIs.Controllers
     [ApiController]
     public class CatalogController : ControllerBase
     {
-        ICatalogService _catalogService;
-        public CatalogController(ICatalogService catalogService)
+        IService<Course> _courseService;
+        public CatalogController(IService<Course> courseService)
         {
-            _catalogService = catalogService;
+            _courseService = courseService;
         }
 
         [HttpGet]
         public IEnumerable<Course> GetCourses()
         {
-            return _catalogService.GetCourses();
+            return _courseService.GetAll();
         }
     }
 }
