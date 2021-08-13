@@ -18,9 +18,32 @@
 
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="ClientApp\dist\**" />
     <Content Remove="$(SpaRoot)**" />
+    <Content Remove="ClientApp\dist\**" />
+    <EmbeddedResource Remove="ClientApp\dist\**" />
     <None Remove="$(SpaRoot)**" />
+    <None Remove="ClientApp\dist\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\dist\3rdpartylicenses.txt" />
+    <None Remove="ClientApp\dist\574.b48e8caa20c541d86a5d.js" />
+    <None Remove="ClientApp\dist\665.e67305a915c0b75b001f.js" />
+    <None Remove="ClientApp\dist\723.4785ab3a7decd684200b.js" />
+    <None Remove="ClientApp\dist\727.3640d9dfb6920069375d.js" />
+    <None Remove="ClientApp\dist\favicon.ico" />
+    <None Remove="ClientApp\dist\index.html" />
+    <None Remove="ClientApp\dist\main.89b09178df5e424afd2b.js" />
+    <None Remove="ClientApp\dist\polyfills.c3364b946979279afcf9.js" />
+    <None Remove="ClientApp\dist\runtime.11f03845612eef9fe8f0.js" />
+    <None Remove="ClientApp\dist\scripts.805e29d6c39ee912ed62.js" />
+    <None Remove="ClientApp\dist\styles.fcbfcf7ae768dd2e2695.css" />
+    <None Remove="ClientApp\dist\summernote.08c343ff91f188dfc1a7.woff" />
+    <None Remove="ClientApp\dist\summernote.7c9436ed8d2deac04e37.woff2" />
+    <None Remove="ClientApp\dist\summernote.b293d601cf1cddd1a1b4.ttf" />
+    <None Remove="ClientApp\dist\summernote.bd0d8be1fbad3612dfe1.eot" />
   </ItemGroup>
 
   <ItemGroup>
