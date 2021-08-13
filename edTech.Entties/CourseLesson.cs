@@ -19,6 +19,9 @@ namespace edTech.Entities
         public bool IsActive { get; set; }
 
         public int CourseTopicId { get; set; }
+
+        public DateTime CreatedDate { get; set; }
+        public DateTime? UpdatedDate { get; set; }
         public virtual CourseTopic CourseTopic { get; set; }
     }
 }

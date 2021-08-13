@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace edTech.APIs.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class MentorController : ControllerBase
     {
@@ -18,13 +18,13 @@ namespace edTech.APIs.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Mentor> GetMentors()
+        public IEnumerable<Mentor> GetAll()
         {
             return _mentorService.GetAll();
         }
 
         [HttpPost]
-        public IActionResult AddMentor(Mentor model)
+        public IActionResult Add(Mentor model)
         {
             try
             {

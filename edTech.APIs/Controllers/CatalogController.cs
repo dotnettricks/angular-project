@@ -19,7 +19,7 @@ namespace edTech.APIs.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Course> GetCourses()
+        public IEnumerable<Course> GetAll()
         {
             return _courseService.GetAll();
         }

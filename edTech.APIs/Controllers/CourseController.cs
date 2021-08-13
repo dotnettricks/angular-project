@@ -22,13 +22,13 @@ namespace edTech.APIs.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Course> GetCourses()
+        public IEnumerable<Course> GetAll()
         {
             return _courseService.GetAll();
         }
 
         [HttpPost]
-        public IActionResult AddCourse(Course model)
+        public IActionResult Add(Course model)
         {
             try
             {
