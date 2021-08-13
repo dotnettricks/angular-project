@@ -50,7 +50,6 @@ export class CourseComponent implements OnInit {
     // console.log(this.fileToUpload)
   }
   saveData() {
-    console.log(this.courseForm.value);
     if (this.courseForm.valid) {
       const formData = new FormData();
       formData.append('file', this.fileToUpload, this.fileToUpload.name);

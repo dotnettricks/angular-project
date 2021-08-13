@@ -12,7 +12,7 @@ namespace edTech.APIs.Controllers
     [EnableCors("AllowAll")]
     [Route("api/[controller]/[action]")]
     [ApiController]
-    [CustomAuthorize]
+   // [CustomAuthorize]
     public class CourseTopicController : ControllerBase
     {
         IService<CourseTopic> _courseTopic;

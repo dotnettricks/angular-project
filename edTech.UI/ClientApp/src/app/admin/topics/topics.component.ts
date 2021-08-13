@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CourseTopic } from 'src/app/models/courseTopic';
+import { CourseTopicService } from 'src/app/services/courseTopic.service';
 
 @Component({
   selector: 'app-topics',
@@ -8,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopicsComponent implements OnInit {
 
-  constructor() { }
+  topics: CourseTopic[] | undefined;
+  constructor(private topicService: CourseTopicService) {
 
-  ngOnInit(): void {
   }
 
+  ngOnInit() {
+    this.topicService.GetTopics().subscribe(res => {
+      if (res.status == 200 && res.body != null) {
+        this.topics = res.body;
+      }
+    });
+  }
+  deleteTopic(id:number){
+
+  }
 }

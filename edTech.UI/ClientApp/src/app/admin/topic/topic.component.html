@@ -1,1 +1,51 @@
-<p>topic works!</p>
+<div class="col-sm-10">
+    <form #form="ngForm" [formGroup]="topicForm" (ngSubmit)="saveData()">
+        <h2 *ngIf="topicForm.controls['id'].value==0">Create Topic</h2>
+        <h2 *ngIf="topicForm.controls['id'].value!=0">Edit Topic</h2>
+        <hr>
+        <div class="form-group">
+            <label class="control-label">Course</label>
+            <select class="form-control" name="courseId" formControlName="courseId">
+                <option [value]="''">-Select-</option>
+                <option value="1">Cloud</option>
+                <option value="2">Web Development</option>
+                <option value="3">Programming</option>
+            </select>
+            <div *ngIf="topicForm.controls['courseId'].errors && (form.submitted || topicForm.controls['courseId'].dirty)"
+                class="text-danger">
+                <span [hidden]="!topicForm.controls['courseId'].errors.required">Please Select Course</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Topic Name</label>
+            <input type="text" class="form-control" name="topicName" formControlName="topicName" />
+            <div *ngIf="topicForm.controls['topicName'].errors && (form.submitted || topicForm.controls['topicName'].dirty)"
+                class="text-danger">
+                <span [hidden]="!topicForm.controls['topicName'].errors.required">Please Enter Topic Name</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Sequence</label>
+            <input type="number" class="form-control" name="sequence" formControlName="sequence" />
+            <div *ngIf="topicForm.controls['sequence'].errors && (form.submitted || topicForm.controls['sequence'].dirty)"
+                class="text-danger">
+                <span [hidden]="!topicForm.controls['sequence'].errors.required">Please Enter Sequence</span>
+            </div>
+        </div>      
+        <div class="form-group">
+            <label class="control-label">Status</label>
+            <select class="form-control" name="isActive" formControlName="isActive">
+                <option [value]="''">-Select-</option>
+                <option value="1">Active</option>
+                <option value="0">InActive</option>
+            </select>
+            <div *ngIf="topicForm.controls['isActive'].errors && (form.submitted || topicForm.controls['isActive'].dirty)"
+                class="text-danger">
+                <span [hidden]="!topicForm.controls['isActive'].errors.required">Please Select Status</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
