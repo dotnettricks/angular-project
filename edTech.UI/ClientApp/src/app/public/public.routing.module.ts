@@ -17,8 +17,13 @@ import { FullLayoutComponent } from './shared/fulllayout.component';
 
 const routes: Routes = [
   {
-    path: '', component: LayoutComponent, children: [
+    path: '', component: FullLayoutComponent, children: [
       { path: '', component: HomeComponent },
+      { path: 'player', component: PlayerComponent }     
+    ]
+  },
+  {
+    path: '', component: LayoutComponent, children: [    
       { path: 'login', component: LoginComponent },
       { path: 'signup', component: SignupComponent },
       { path: 'unauthorize', component: UnauthorizeComponent },
@@ -27,12 +32,7 @@ const routes: Routes = [
       // { path: 'player', component: PlayerComponent },
       { path: 'payment', component: PaymentComponent },
       { path: 'receipt', component: ReceiptComponent },
-      { path: 'cart', component: CartComponent }
-    ]
-  },
-  {
-    path: '', component: FullLayoutComponent, children: [
-      { path: 'player', component: PlayerComponent },
+      { path: 'cart', component: CartComponent },
       { path: 'notfound', component: NotfoundComponent },
       { path: '**', redirectTo: '/notfound' }
     ]

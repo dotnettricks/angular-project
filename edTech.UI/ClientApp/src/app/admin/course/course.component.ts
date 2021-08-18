@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Category } from 'src/app/models/category';
+import { CategoryService } from 'src/app/services/category.service';
 import { CourseService } from 'src/app/services/course.service';
 import { FileService } from 'src/app/services/file.service';
 
@@ -11,6 +13,7 @@ import { FileService } from 'src/app/services/file.service';
 })
 export class CourseComponent implements OnInit {
   courseForm: FormGroup;
+  categories: Category[];
   config = {
     placeholder: '',
     tabsize: 2,
@@ -25,7 +28,7 @@ export class CourseComponent implements OnInit {
     fontNames: ['Helvetica', 'Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', 'Roboto', 'Times']
   }
   fileToUpload: any;
-  constructor(private fb: FormBuilder, private courseService: CourseService, private router: Router, private fileService: FileService) {
+  constructor(private fb: FormBuilder, private courseService: CourseService, private router: Router, private fileService: FileService, private categoryService: CategoryService) {
     this.courseForm = this.fb.group({
       id: [0],
       name: [null, Validators.required],
@@ -34,13 +37,17 @@ export class CourseComponent implements OnInit {
       difficultyType: ['', Validators.required],
       unitPrice: [null, Validators.required],
       categoryId: ['', Validators.required],
-      //  itemTypeId: [null, Validators.required],
+      url: [null, Validators.required],
       imageUrl: ['']
     });
   }
 
   ngOnInit() {
-
+    this.categoryService.GetCategories().subscribe(res => {
+      if (res.status == 200 && res.body != null) {
+        this.categories = res.body;
+      }
+    });
   }
   changeFile(files: any) {
     if (files.length === 0) {

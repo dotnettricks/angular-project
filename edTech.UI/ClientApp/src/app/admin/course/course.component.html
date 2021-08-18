@@ -7,9 +7,7 @@
             <label class="control-label">Category</label>
             <select class="form-control" name="categoryId" formControlName="categoryId">
                 <option [value]="''">-Select-</option>
-                <option value="1">Cloud</option>
-                <option value="2">Web Development</option>
-                <option value="3">Programming</option>
+                <option *ngFor="let item of categories" [value]="item.id">{{item.name}}</option>
             </select>
             <div *ngIf="courseForm.controls['categoryId'].errors && (form.submitted || courseForm.controls['categoryId'].dirty)"
                 class="text-danger">
@@ -22,6 +20,14 @@
             <div *ngIf="courseForm.controls['name'].errors && (form.submitted || courseForm.controls['name'].dirty)"
                 class="text-danger">
                 <span [hidden]="!courseForm.controls['name'].errors.required">Please Enter Name</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Url</label>
+            <input type="text" class="form-control" name="url" formControlName="url" />
+            <div *ngIf="courseForm.controls['url'].errors && (form.submitted || courseForm.controls['url'].dirty)"
+                class="text-danger">
+                <span [hidden]="!courseForm.controls['url'].errors.required">Please Enter Url</span>
             </div>
         </div>
         <div class="form-group">
