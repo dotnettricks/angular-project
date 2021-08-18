@@ -6,7 +6,7 @@ export class Course {
     difficultyType: number | undefined;
     unitPrice: number | undefined;
     imageUrl: string | undefined;
-    Url: number | undefined;
+    url: number | undefined;
     categoryId: number | undefined;
     createdDate: Date | undefined;
 }

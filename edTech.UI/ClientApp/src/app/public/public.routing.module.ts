@@ -19,7 +19,8 @@ const routes: Routes = [
   {
     path: '', component: FullLayoutComponent, children: [
       { path: '', component: HomeComponent },
-      { path: 'player', component: PlayerComponent }     
+      { path: 'courses/:name', component: CourseComponent },
+      { path: 'player/:name', component: PlayerComponent }     
     ]
   },
   {
@@ -28,8 +29,6 @@ const routes: Routes = [
       { path: 'signup', component: SignupComponent },
       { path: 'unauthorize', component: UnauthorizeComponent },
       { path: 'courses', component: CoursesComponent },
-      { path: 'course', component: CourseComponent },
-      // { path: 'player', component: PlayerComponent },
       { path: 'payment', component: PaymentComponent },
       { path: 'receipt', component: ReceiptComponent },
       { path: 'cart', component: CartComponent },

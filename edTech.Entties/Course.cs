@@ -14,7 +14,7 @@ namespace edTech.Entities
         public decimal Sequence { get; set; }
         public int MentorId { get; set; }
         public string ImageUrl { get; set; }
-        public string URL { get; set; }
+        public string Url { get; set; }
         public decimal UnitPrice { get; set; }
         public int CategoryId { get; set; }
         public int DifficultyType { get; set; }
