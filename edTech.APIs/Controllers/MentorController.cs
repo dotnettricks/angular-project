@@ -1,5 +1,6 @@
 ﻿using edTech.Entities;
 using edTech.Services.Interfaces;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -7,6 +8,7 @@ using System.Collections.Generic;
 
 namespace edTech.APIs.Controllers
 {
+    [EnableCors("AllowAll")]
     [Route("api/[controller]/[action]")]
     [ApiController]
     public class MentorController : ControllerBase

@@ -16,6 +16,7 @@ export class HeaderComponent implements OnInit {
   cart: Cart;
   constructor(private authService: AuthService, private router: Router, private cartService: CartService) {
     this.user = this.authService.user;
+    console.log(this.user);
     this.cart = this.cartService.getCart();
   }
 

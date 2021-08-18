@@ -1,16 +1,14 @@
 <h2>Lessons List</h2>
 <hr>
-<a [routerLink]="['/admin/lesson']" class="btn btn-primary">Create</a>
+<a [routerLink]="['/admin/topic',topicId,'lesson']" class="btn btn-primary">Create</a>
 
 <table class="table">
   <thead>
     <tr>
       <th>Id</th>
       <th>Name</th>
-      <th>Description</th>
       <th>Duration</th>
-      <th>PdfPath</th>
-      <th>CodePath</th>
+      <th>Content Path</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -18,12 +16,10 @@
     <tr *ngFor="let item of courseLessons">
       <td>{{item.id}}</td>
       <td>{{item.lessonName}}</td>
-      <td>{{item.Description}}</td>
-      <td>{{item.Duration}}</td>
-      <td>{{item.PdfPath}}</td>
-      <td>{{item.CodePath}}</td>     
+      <td>{{item.duration}}</td>
+      <td>{{item.contentPath}}</td>
       <td>
-        <a [routerLink]="['/admin/lesson',item.id]" class="btn btn-success">Edit</a>
+        <a [routerLink]="['/admin/topic',topicId,'lesson', item.id]" class="btn btn-success">Edit</a>
         &nbsp; <a (click)="deleteLesson(item.id)" class="btn btn-danger">Delete</a>
       </td>
     </tr>

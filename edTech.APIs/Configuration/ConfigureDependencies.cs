@@ -16,6 +16,7 @@ namespace edTech.APIs.Configuration
             services.AddScoped<ICartService, CartService>();
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IPaymentService, PaymentService>();
+            services.AddScoped<ILessonService, LessonService>();
         }
     }
 }

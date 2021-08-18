@@ -15,16 +15,22 @@ namespace edTech.APIs.Controllers
     [CustomAuthorize]
     public class CourseLessonController : ControllerBase
     {
-        IService<CourseLesson> _courseLesson;
-        public CourseLessonController(IService<CourseLesson> courseLesson)
+        ILessonService _lessonService;
+        public CourseLessonController(ILessonService lessonService)
         {
-            _courseLesson = courseLesson;
+            _lessonService = lessonService;
         }
 
         [HttpGet]
         public IEnumerable<CourseLesson> GetAll()
         {
-            return _courseLesson.GetAll();
+            return _lessonService.GetAll();
+        }
+
+        [HttpGet("{id}")]
+        public IEnumerable<CourseLesson> GetLessonsByTopic(int id)
+        {
+            return _lessonService.GetLessonsByTopic(id);
         }
 
         [HttpPost]
@@ -32,7 +38,7 @@ namespace edTech.APIs.Controllers
         {
             try
             {
-                _courseLesson.Add(model);
+                _lessonService.Add(model);
                 return StatusCode(StatusCodes.Status201Created);
             }
             catch (Exception ex)

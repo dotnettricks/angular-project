@@ -17,19 +17,18 @@ const routes: Routes = [
       { path: '', component: DashboardComponent },
       { path: 'courses', component: CoursesComponent },
       { path: 'course', component: CourseComponent },
-      { path: 'course/{id}', component: CourseComponent },
+      { path: 'course/:id', component: CourseComponent },
       { path: 'courses', component: CoursesComponent },
       { path: 'topic', component: TopicComponent },
-      { path: 'topic/{id}', component: TopicComponent },
-      { path: 'topics', component: TopicsComponent },
-      { path: 'lesson', component: LessonComponent },
-      { path: 'lesson/{id}', component: LessonComponent },
-      { path: 'lessons', component: LessonsComponent },
+      { path: 'topic/:id', component: TopicComponent },
+      { path: 'topics', component: TopicsComponent },     
+      { path: 'topic/:topicid/lessons', component: LessonsComponent },
+      { path: 'topic/:topicid/lesson', component: LessonComponent },
+      { path: 'topic/:topicid/lesson/:id', component: LessonComponent },
       { path: 'mentors', component: MentorsComponent },
       { path: 'mentor', component: MentorComponent },
-      { path: 'mentor/{id}', component: MentorComponent }
-    ]
-  }
+      { path: 'mentor/:id', component: MentorComponent }]
+    }
 ];
 @NgModule({
   imports: [RouterModule.forChild(routes)],

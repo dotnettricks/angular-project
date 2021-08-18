@@ -12,19 +12,19 @@ namespace edTech.APIs.Controllers
     [EnableCors("AllowAll")]
     [Route("api/[controller]/[action]")]
     [ApiController]
-   // [CustomAuthorize]
+    [CustomAuthorize]
     public class CourseTopicController : ControllerBase
     {
-        IService<CourseTopic> _courseTopic;
-        public CourseTopicController(IService<CourseTopic> courseTopic)
+        ITopicService _courseTopic;
+        public CourseTopicController(ITopicService courseTopic)
         {
             _courseTopic = courseTopic;
         }
 
-        [HttpGet]
-        public IEnumerable<CourseTopic> GetAll()
+        [HttpGet("{id}")]
+        public IEnumerable<CourseTopic> GetTopicsByCourse(int id)
         {
-            return _courseTopic.GetAll();
+            return _courseTopic.GetTopicsByCourse(id);
         }
 
         [HttpPost]
