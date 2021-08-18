@@ -33,8 +33,8 @@ export class TopicComponent implements OnInit {
   }
   saveData() {
     if (this.topicForm.valid) {
-      console.log(this.topicForm.value);
       this.topicService.AddTopic(this.topicForm.value).subscribe(res => {
+      console.log(res);
         if (res.status == 201) {
           this.router.navigate(['/admin/topics']);
         }

@@ -22,6 +22,20 @@ namespace edTech.Repositories.Implementations
         {
 
         }
+        public IEnumerable<CourseTopic> GetAllTopics()
+        {
+            var Topics = (from topic in dbContext.CourseTopics
+                          join course in dbContext.Courses
+                          on topic.CourseId equals course.Id
+                          select new CourseTopic
+                          {
+                              Id=topic.Id,
+                              TopicName=topic.TopicName,
+                              CourseName=course.Name,
+                              IsActive=topic.IsActive
+                          }).ToList();
+            return Topics;
+        }
 
         public IEnumerable<CourseTopic> GetTopicsByCourse(int id)
         {

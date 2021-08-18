@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace edTech.Entities
 {
@@ -14,7 +15,9 @@ namespace edTech.Entities
         public string TopicName { get; set; }
         public bool IsActive { get; set; }
         public decimal Sequence { get; set; }
-        public int TopicTypeId { get; set; }
+
+        [NotMapped]
+        public  string CourseName { get; set; }
 
         public virtual Course Course { get; set; }
         public virtual ICollection<CourseLesson> Lessons { get; set; }

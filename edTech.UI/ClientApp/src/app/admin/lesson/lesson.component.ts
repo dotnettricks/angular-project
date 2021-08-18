@@ -13,7 +13,7 @@ import { CourseLessonService } from '../../services/courseLesson.service';
 export class LessonComponent implements OnInit {
   lessonForm: FormGroup;
   topicId: number | undefined;
-  constructor(private fb: FormBuilder, private lessonService: CourseLessonService, private route: ActivatedRoute, private router: Router,) {
+  constructor(private fb: FormBuilder, private lessonService: CourseLessonService, private route: ActivatedRoute, private router: Router) {
     this.lessonForm = this.fb.group({
       id: [0],
       lessonName: [null, Validators.required],
@@ -33,15 +33,12 @@ export class LessonComponent implements OnInit {
     })
   }
   saveData() {
-    console.log(this.lessonForm.value);
     var lesson: CourseLesson = this.lessonForm.value;
     lesson.courseTopicId = this.topicId;
-    lesson.isActive=true;
-    lesson.isLock=true;
     if (this.lessonForm.valid) {
       this.lessonService.AddLesson(lesson).subscribe(res => {
         if (res.status == 201) {
-          this.router.navigate(['/admin/topic', this.topicId, 'lesson']);
+          this.router.navigate(['/admin/topic', this.topicId, 'lessons']);
         }
       });
     }

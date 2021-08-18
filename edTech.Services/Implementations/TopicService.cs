@@ -16,6 +16,10 @@ namespace edTech.Services.Implementations
         {
             _topicRepo = topicRepo;
         }
+        public IEnumerable<CourseTopic> GetAllTopics()
+        {
+            return _topicRepo.GetAllTopics();
+        }
         public IEnumerable<CourseTopic> GetTopicsByCourse(int CourseId)
         {
             return _topicRepo.GetTopicsByCourse(CourseId);

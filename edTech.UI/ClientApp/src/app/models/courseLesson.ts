@@ -1,8 +1,9 @@
 export class CourseLesson {
   id: number | undefined;
   lessonName: string | undefined;
+  videoPath: string | undefined;
   contentPath: string | undefined;
-  isLock: boolean | undefined;
+  isPreview: boolean | undefined;
   isActive: boolean | undefined;
   duration: string | undefined;
   sequence: number | undefined;

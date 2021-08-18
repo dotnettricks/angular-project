@@ -17,21 +17,11 @@ export class TopicsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.topicService.GetTopicsByCourse(this.courseId).subscribe(res => {
+    this.topicService.GetAllTopics().subscribe(res => {
       if (res.status == 200 && res.body != null) {
         this.topics = res.body;
       }
     });
-    // this.route.params.subscribe(params => {
-    //   this.courseId = params.topicid;
-    //   if (this.courseId != undefined) {
-    //     this.topicService.GetTopicsByCourse(this.courseId).subscribe(res => {
-    //       if (res.status == 200 && res.body != null) {
-    //         this.topics = res.body;
-    //       }
-    //     });
-    //   }
-    
   }
   deleteTopic(id:number){
 

@@ -9,6 +9,7 @@ namespace edTech.Repositories.Interfaces
 {
    public interface ITopicRepository
     {
+        IEnumerable<CourseTopic> GetAllTopics();
         IEnumerable<CourseTopic> GetTopicsByCourse(int id);
     }
 }

@@ -9,6 +9,7 @@ namespace edTech.Services.Interfaces
 {
     public interface ITopicService: IService<CourseTopic>
     {
+        IEnumerable<CourseTopic> GetAllTopics();
         IEnumerable<CourseTopic> GetTopicsByCourse(int CourseId);
     }
 }

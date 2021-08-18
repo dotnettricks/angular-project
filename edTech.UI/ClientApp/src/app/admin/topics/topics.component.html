@@ -7,6 +7,7 @@
         <tr>
             <th>Id</th>
             <th>Name</th>
+            <th>Course</th>
             <th>Status</th>
             <th>Actions</th>
         </tr>
@@ -15,7 +16,8 @@
         <tr *ngFor="let item of topics">
             <td>{{item.id}}</td>
             <td>{{item.topicName}}</td>
-            <td>{{item.isActive}}</td>          
+            <td>{{item.courseName}}</td>
+            <td>{{item.isActive==true?'Active':'InActive'}}</td>          
             <td>
                 <a [routerLink]="['/admin/topic',item.id]" class="btn btn-success">Edit</a>
                 &nbsp;<a [routerLink]="['/admin/topic',item.id,'lessons']" class="btn btn-success">Lessons</a>

@@ -17,6 +17,7 @@ import { TopicsComponent } from './topics/topics.component';
 import { TopicComponent } from './topic/topic.component';
 import { LessonComponent } from './lesson/lesson.component';
 import { LessonsComponent } from './lessons/lessons.component';
+import { SafePipe } from '../safe.pipe';
 
 @NgModule({
     imports: [
@@ -39,7 +40,8 @@ import { LessonsComponent } from './lessons/lessons.component';
         TopicsComponent,
         TopicComponent,
         LessonComponent,
-        LessonsComponent
+        LessonsComponent,
+        SafePipe
     ],
     providers: [CourseService],
 })

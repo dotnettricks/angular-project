@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Id</th>
+      <th>Video</th>
       <th>Name</th>
       <th>Duration</th>
       <th>Content Path</th>
@@ -15,6 +16,9 @@
   <tbody>
     <tr *ngFor="let item of courseLessons">
       <td>{{item.id}}</td>
+      <td>
+        <iframe class="embed-responsive-item w-50" [src]="item.videoPath | safe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </td>
       <td>{{item.lessonName}}</td>
       <td>{{item.duration}}</td>
       <td>{{item.contentPath}}</td>
