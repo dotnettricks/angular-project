@@ -8,7 +8,7 @@
     <div class="row no-gutters">
         <div class="col-sm-9">
             <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/1lhUlBvEGvs" frameborder="0"
+                <iframe class="embed-responsive-item" [src]="videoUrl | safe" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen></iframe>
             </div>
@@ -29,13 +29,13 @@
                         <div class="card-body">
                             <div class="list_lessons">
                                 <ul>
-                                    <li><a href="https://www.youtube.com/watch?v=LDgd_gUcqCw"><i
+                                    <li><a href="javascript:void(0)" (click)="playVideo('https://www.youtube.com/embed/LDgd_gUcqCw')"><i
                                                 class="bi bi-play-circle"></i> Health
                                             Science</a><span>00:59</span></li>
-                                    <li><a href="https://www.youtube.com/watch?v=LDgd_gUcqCw"><i
+                                    <li><a href="https://www.youtube.com/embed/LDgd_gUcqCw"><i
                                                 class="bi bi-play-circle"></i> Health and Social
                                             Care</a><span>00:59</span></li>
-                                    <li><a href="https://www.youtube.com/watch?v=LDgd_gUcqCw"><i
+                                    <li><a href="https://www.youtube.com/embed/LDgd_gUcqCw"><i
                                                 class="bi bi-play-circle"></i> Health
                                             Science</a><span>00:59</span></li>
                                 </ul>
@@ -57,13 +57,13 @@
                         <div class="card-body">
                             <div class="list_lessons">
                                 <ul>
-                                    <li><a href="https://www.youtube.com/watch?v=LDgd_gUcqCw"><i
+                                    <li><a href="https://www.youtube.com/embed/LDgd_gUcqCw"><i
                                                 class="bi bi-play-circle"></i> Health
                                             Science</a><span>00:59</span></li>
-                                    <li><a href="https://www.youtube.com/watch?v=LDgd_gUcqCw"><i
+                                    <li><a href="https://www.youtube.com/embed/LDgd_gUcqCw"><i
                                                 class="bi bi-play-circle"></i> Health and Social
                                             Care</a><span>00:59</span></li>
-                                    <li><a href="https://www.youtube.com/watch?v=LDgd_gUcqCw"><i
+                                    <li><a href="https://www.youtube.com/embed/LDgd_gUcqCw"><i
                                                 class="bi bi-play-circle"></i> Health
                                             Science</a><span>00:59</span></li>
                                 </ul>
@@ -85,13 +85,13 @@
                         <div class="card-body">
                             <div class="list_lessons">
                                 <ul>
-                                    <li><a href="https://www.youtube.com/watch?v=LDgd_gUcqCw"><i
+                                    <li><a href="https://www.youtube.com/embed/LDgd_gUcqCw"><i
                                                 class="bi bi-play-circle"></i> Health
                                             Science</a><span>00:59</span></li>
-                                    <li><a href="https://www.youtube.com/watch?v=LDgd_gUcqCw"><i
+                                    <li><a href="https://www.youtube.com/embed/LDgd_gUcqCw"><i
                                                 class="bi bi-play-circle"></i> Health and Social
                                             Care</a><span>00:59</span></li>
-                                    <li><a href="https://www.youtube.com/watch?v=LDgd_gUcqCw"><i
+                                    <li><a href="https://www.youtube.com/embed/LDgd_gUcqCw"><i
                                                 class="bi bi-play-circle"></i> Health
                                             Science</a><span>00:59</span></li>
                                 </ul>

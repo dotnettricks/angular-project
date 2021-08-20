@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styles: ['body {margin-bottom: 0 !important; }']
 })
 export class PlayerComponent implements OnInit {
-
+  videoUrl: string;
   constructor() { }
 
   ngOnInit(): void {
+    this.videoUrl = 'https://www.youtube.com/embed/1lhUlBvEGvs';
+  }
+  playVideo(url) {
+    this.videoUrl = url;
   }
 
 }
