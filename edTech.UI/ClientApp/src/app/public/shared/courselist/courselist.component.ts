@@ -22,6 +22,7 @@ export class CourselistComponent implements OnInit {
   ngOnInit(): void {
     this.catalogService.GetCourses().subscribe(res => {
       if (res.status == 200 && res.body != null) {
+        console.log(res.body);
         this.courses = res.body;
       }
     });

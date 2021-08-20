@@ -1,3 +1,5 @@
+import { CourseLesson } from "./courseLesson";
+
 export class CourseTopic {
   id: number | undefined;
   courseId: string | undefined;
@@ -5,4 +7,6 @@ export class CourseTopic {
   courseName: string | undefined;
   isActive: boolean | undefined;
   sequence: number | undefined;
+
+  lessons:CourseLesson[];
 }

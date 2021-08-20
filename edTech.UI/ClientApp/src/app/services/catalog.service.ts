@@ -14,4 +14,8 @@ export class CatalogService {
   GetCourses(): Observable<HttpResponse<Course[]>> {
     return this.httpClient.get<Course[]>(environment.apiAddress + '/catalog/getall', { headers: this.httpHeaders, observe: 'response' });
   }
+
+  GetCourseWithLessons(url: string): Observable<HttpResponse<Course>> {
+    return this.httpClient.get<Course>(environment.apiAddress + '/catalog/GetCourseWithLessons/' + url, { headers: this.httpHeaders, observe: 'response' });
+  }
 }

@@ -29,19 +29,25 @@ namespace edTech.Repositories.Implementations
                           on topic.CourseId equals course.Id
                           select new CourseTopic
                           {
-                              Id=topic.Id,
-                              TopicName=topic.TopicName,
-                              CourseName=course.Name,
-                              IsActive=topic.IsActive
+                              Id = topic.Id,
+                              TopicName = topic.TopicName,
+                              CourseName = course.Name,
+                              IsActive = topic.IsActive
                           }).ToList();
+            return Topics;
+        }
+
+        public IEnumerable<CourseTopic> GetTopicWithLessons(int id)
+        {
+            var Topics = dbContext.CourseTopics.Where(c => c.CourseId == id).Include("Lessons").ToList();
             return Topics;
         }
 
         public IEnumerable<CourseTopic> GetTopicsByCourse(int id)
         {
             var Topics = (from topic in dbContext.CourseTopics
-                           where topic.CourseId == id
-                           select topic).ToList();
+                          where topic.CourseId == id
+                          select topic).ToList();
             return Topics;
         }
     }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Course } from 'src/app/models/course';
+import { CatalogService } from 'src/app/services/catalog.service';
 
 @Component({
   selector: 'app-course',
@@ -8,13 +10,17 @@ import { ActivatedRoute } from '@angular/router';
   ]
 })
 export class CourseComponent implements OnInit {
-  course: string | undefined;
-  constructor(private route: ActivatedRoute) { }
+  name: string | undefined;
+  course: Course | undefined;
+  constructor(private route: ActivatedRoute, private catalogService: CatalogService) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.course = params.name;
-    })
+      this.name = params.name;
+      this.catalogService.GetCourseWithLessons(this.name).subscribe(res => {
+        if (res.status == 200)
+          this.course = res.body;
+      });
+    });
   }
-
 }

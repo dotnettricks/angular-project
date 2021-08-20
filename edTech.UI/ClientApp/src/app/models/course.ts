@@ -1,3 +1,5 @@
+import { CourseTopic } from "./courseTopic";
+
 export class Course {
     id: number | undefined;
     name: string | undefined;
@@ -9,4 +11,6 @@ export class Course {
     url: number | undefined;
     categoryId: number | undefined;
     createdDate: Date | undefined;
+
+    courseTopics:CourseTopic[];
 }
