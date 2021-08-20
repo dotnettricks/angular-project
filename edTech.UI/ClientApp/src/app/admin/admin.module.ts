@@ -17,7 +17,7 @@ import { TopicsComponent } from './topics/topics.component';
 import { TopicComponent } from './topic/topic.component';
 import { LessonComponent } from './lesson/lesson.component';
 import { LessonsComponent } from './lessons/lessons.component';
-import { SafePipe } from '../safe.pipe';
+import { SharedModule } from '../app.shared.module';
 
 @NgModule({
     imports: [
@@ -25,7 +25,8 @@ import { SafePipe } from '../safe.pipe';
         FormsModule,
         ReactiveFormsModule,
         AdminRoutingModule,
-        NgxSummernoteModule
+        NgxSummernoteModule,
+        SharedModule
     ],
     exports: [],
     declarations: [
@@ -40,8 +41,7 @@ import { SafePipe } from '../safe.pipe';
         TopicsComponent,
         TopicComponent,
         LessonComponent,
-        LessonsComponent,
-        SafePipe
+        LessonsComponent
     ],
     providers: [CourseService],
 })

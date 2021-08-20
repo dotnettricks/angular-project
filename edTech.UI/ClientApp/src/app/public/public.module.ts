@@ -20,6 +20,7 @@ import { ReceiptComponent } from './receipt/receipt.component';
 import { CourseComponent } from './course/course.component';
 import { PlayerComponent } from './player/player.component';
 import { FullLayoutComponent } from './shared/fulllayout.component';
+import { SharedModule } from '../app.shared.module';
 
 @NgModule({
     imports: [
@@ -27,7 +28,8 @@ import { FullLayoutComponent } from './shared/fulllayout.component';
         FormsModule,
         ReactiveFormsModule,
         HttpClientModule,
-        PublicRoutingModule
+        PublicRoutingModule,
+        SharedModule
     ],
     exports: [],
     declarations: [

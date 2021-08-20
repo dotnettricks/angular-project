@@ -14,8 +14,9 @@
         </div>
       </div>
       <div class="col-sm-4 pt-5 pb-2">
+        {{course.demoUrl}}
         <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/1lhUlBvEGvs" frameborder="0"
+          <iframe class="embed-responsive-item" [src]="course.demoUrl | safe" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
         </div>
@@ -55,32 +56,35 @@
     </div>
     <div class="col-sm-4">
       <div class="text-center card p-4">
-        <h4><del>₹20,000</del></h4>
-        <h2>₹10,000</h2>
-        <span class="text-danger">FLAT 50% OFF</span>
-        <p>
-          <a href="#0" class="btn btn-outline-primary btn-block">ADD TO CART</a>
+        <h2>{{course.unitPrice | currency:'INR'}}</h2>
+        <p class="mt-2">
+          <a href="javascript:void(0)" (click)="AddToCart(course.id,course.name,course.unitPrice,1,course.imageUrl)" class="btn btn-outline-primary btn-block">Add To Cart</a>
         </p>
         <p>
-          <a href="#0" class="btn btn-info btn-block">BUY NOW</a>
+          <a href="javascript:void(0)" (click)="BuyNow(course.id,course.name,course.unitPrice,1,course.imageUrl)" class="btn btn-info btn-block">BUY NOW</a>
         </p>
       </div>
       <div class="card mt-4 p-3 mb-4">
         <h3>About The Mentor</h3>
         <p style="text-align:justify;font-size:14px;text-rendering:optimizeLegibility"></p>
-        <p style="text-align:justify">A focused and result-oriented professional with over 8 years of experience in
-          technical and corporate training. She has delivered corporate training in India as well as abroad. She has
-          vast corporate training experience in MNC's like TCS, Infosys, Accenture, Wipro etc. She is passionate
-          about learning new technologies and sharing her experience with professionals. She is an expert in
-          Microsoft Technologies along with React, Angular and Node.<br></p>
+        <p style="text-align:justify">{{course.mentor.biography}}<br></p>
         <div class="text-center">
           <img class="rounded-circle" style="width:150px;height:150px;text-align:center"
-            src="https://dotnettrickscloud.blob.core.windows.net/uploads/mentorImages/120190306160109.png">
-          <h4>Bhawna Gunwani</h4>
-          <div>Corporate Trainer</div>
+            [src]="course.mentor.imageUrl">
+          <h4>{{course.mentor.name}}</h4>
+          <div>{{course.mentor.title}}</div>
         </div>
       </div>
     </div>
   </div>
 </div>
 <app-footer></app-footer>  
+
+<!-- toast -->
+<div class="toast fade hide" data-autohide="false" id="toastCart">
+  <div class="toast-header">
+      <strong class="mr-auto text-primary">Notification</strong>
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">×</button>
+  </div>
+  <div class="toast-body" [innerHTML]="message"></div>
+</div>

@@ -28,6 +28,7 @@ namespace edTech.Services.Configuration
             services.AddTransient<ICourseRepository, CourseRepository>();
 
             services.AddTransient<IRepository<Course>, Repository<Course>>();
+            services.AddTransient<IRepository<Mentor>, Repository<Mentor>>();
             services.AddTransient<IRepository<Category>, Repository<Category>>();
             services.AddTransient<IRepository<CourseTopic>, Repository<CourseTopic>>();
             services.AddTransient<IRepository<CourseLesson>, Repository<CourseLesson>>();

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Course } from 'src/app/models/course';
 import { CartService } from 'src/app/services/cart.service';
 import { CatalogService } from 'src/app/services/catalog.service';
@@ -36,4 +37,6 @@ export class CourselistComponent implements OnInit {
       $('#toastCart').toast('hide');
     }, 4000);
   }
+
+ 
 }
