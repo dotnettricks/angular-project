@@ -10,7 +10,7 @@ export class Course {
     unitPrice: number | undefined;
     imageUrl: string | undefined;
     demoUrl: string | undefined;
-    url: number | undefined;
+    url: string | undefined;
     categoryId: number | undefined;
     createdDate: Date | undefined;
     mentor:Mentor | undefined;

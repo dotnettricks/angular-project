@@ -16,9 +16,11 @@ namespace edTech.APIs.Controllers
     public class CourseController : ControllerBase
     {
         IService<Course> _courseService;
-        public CourseController(IService<Course> courseService)
+        ISubscriptionService _subscriptionService;
+        public CourseController(IService<Course> courseService, ISubscriptionService subscriptionService)
         {
             _courseService = courseService;
+            _subscriptionService = subscriptionService;
         }
 
         [HttpGet]
@@ -39,6 +41,12 @@ namespace edTech.APIs.Controllers
             {
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
+        }
+
+        [HttpGet("{UserId}/{CourseId}")]
+        public Subscription GetCourseSubscription(int UserId, int CourseId)
+        {
+            return _subscriptionService.GetUserSubscription(UserId, CourseId);
         }
     }
 }

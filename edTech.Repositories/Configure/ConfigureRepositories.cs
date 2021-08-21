@@ -32,8 +32,11 @@ namespace edTech.Services.Configuration
             services.AddTransient<IRepository<Category>, Repository<Category>>();
             services.AddTransient<IRepository<CourseTopic>, Repository<CourseTopic>>();
             services.AddTransient<IRepository<CourseLesson>, Repository<CourseLesson>>();
+            services.AddTransient<IRepository<Subscription>, Repository<Subscription>>();
+
             services.AddTransient<ITopicRepository, TopicRepository>();
             services.AddTransient<ILessonRepository, LessonRepository>();
+            services.AddTransient<ISubscriptionRepository, SubscriptionRepository>();
 
             services.AddTransient<IRepository<CartItem>, Repository<CartItem>>();
             services.AddTransient<IRepository<OrderItem>, Repository<OrderItem>>();

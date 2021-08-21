@@ -14,7 +14,7 @@ export class CourseComponent implements OnInit {
   name: string | undefined;
   course: Course | undefined;
   message: string;
-  constructor(private route: ActivatedRoute, private catalogService: CatalogService,private cartService: CartService,private router: Router) { }
+  constructor(private route: ActivatedRoute, private catalogService: CatalogService, private cartService: CartService, private router: Router) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -22,7 +22,7 @@ export class CourseComponent implements OnInit {
       this.catalogService.GetCourseWithLessons(this.name).subscribe(res => {
         if (res.status == 200)
           this.course = res.body;
-          console.log(this.course);
+          this.course.url = this.course.url.replace("courses", "player");
       });
     });
   }

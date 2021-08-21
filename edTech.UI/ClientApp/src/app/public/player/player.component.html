@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white box-shadow">
     <div>
-        <h2> <i class="bi bi-stack"></i> Angular Training For Beginners</h2>
+        <h2> <i class="bi bi-stack"></i> {{course.name}}</h2>
     </div>
 </nav>
 
@@ -15,12 +15,12 @@
         </div>
         <div class="col-sm-3">
             <div class="accordion mb-4" id="accordionLessons">
-                <div class="card">
+                <div class="card" *ngFor="let topic of course.courseTopics">
                     <div class="card-header" id="headingOne">
                         <h5 class="mb-0">
                             <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
                                 aria-expanded="true" aria-controls="collapseOne">
-                                Angular Fundamentals
+                                {{topic.topicName}}
                             </button>
                         </h5>
                     </div>
@@ -29,71 +29,9 @@
                         <div class="card-body">
                             <div class="list_lessons">
                                 <ul>
-                                    <li><a href="javascript:void(0)" (click)="playVideo('https://www.youtube.com/embed/LDgd_gUcqCw')"><i
-                                                class="bi bi-play-circle"></i> Health
-                                            Science</a><span>00:59</span></li>
-                                    <li><a href="https://www.youtube.com/embed/LDgd_gUcqCw"><i
-                                                class="bi bi-play-circle"></i> Health and Social
-                                            Care</a><span>00:59</span></li>
-                                    <li><a href="https://www.youtube.com/embed/LDgd_gUcqCw"><i
-                                                class="bi bi-play-circle"></i> Health
-                                            Science</a><span>00:59</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" id="headingTwo">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo"
-                                aria-expanded="false" aria-controls="collapseTwo">
-                                Angular Forms
-                            </button>
-                        </h5>
-                    </div>
-                    <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo"
-                        data-parent="#accordionLessons">
-                        <div class="card-body">
-                            <div class="list_lessons">
-                                <ul>
-                                    <li><a href="https://www.youtube.com/embed/LDgd_gUcqCw"><i
-                                                class="bi bi-play-circle"></i> Health
-                                            Science</a><span>00:59</span></li>
-                                    <li><a href="https://www.youtube.com/embed/LDgd_gUcqCw"><i
-                                                class="bi bi-play-circle"></i> Health and Social
-                                            Care</a><span>00:59</span></li>
-                                    <li><a href="https://www.youtube.com/embed/LDgd_gUcqCw"><i
-                                                class="bi bi-play-circle"></i> Health
-                                            Science</a><span>00:59</span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" id="headingThree">
-                        <h5 class="mb-0">
-                            <button class="btn btn-link" type="button" data-toggle="collapse"
-                                data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Angular Services
-                            </button>
-                        </h5>
-                    </div>
-                    <div id="collapseThree" class="collapse show" aria-labelledby="headingThree"
-                        data-parent="#accordionLessons">
-                        <div class="card-body">
-                            <div class="list_lessons">
-                                <ul>
-                                    <li><a href="https://www.youtube.com/embed/LDgd_gUcqCw"><i
-                                                class="bi bi-play-circle"></i> Health
-                                            Science</a><span>00:59</span></li>
-                                    <li><a href="https://www.youtube.com/embed/LDgd_gUcqCw"><i
-                                                class="bi bi-play-circle"></i> Health and Social
-                                            Care</a><span>00:59</span></li>
-                                    <li><a href="https://www.youtube.com/embed/LDgd_gUcqCw"><i
-                                                class="bi bi-play-circle"></i> Health
-                                            Science</a><span>00:59</span></li>
+                                    <li *ngFor="let lesson of topic.lessons">
+                                        <a href="javascript:void(0)"
+                                        (click)="playVideo(lesson.videoPath)"><i class="bi bi-play-circle"></i> {{lesson.lessonName}}</a><span>{{lesson.duration}}</span></li>
                                 </ul>
                             </div>
                         </div>

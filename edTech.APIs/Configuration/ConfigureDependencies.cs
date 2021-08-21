@@ -14,12 +14,15 @@ namespace edTech.APIs.Configuration
             services.AddScoped<IService<CourseTopic>, Service<CourseTopic>>();
             services.AddScoped<IService<CourseLesson>, Service<CourseLesson>>();
             services.AddScoped<IService<Category>, Service<Category>>();
+            services.AddScoped<IService<Subscription>, Service<Subscription>>();
+
             services.AddScoped<ICartService, CartService>();
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IPaymentService, PaymentService>();
             services.AddScoped<ITopicService, TopicService>();
             services.AddScoped<ILessonService, LessonService>();
             services.AddScoped<ICourseService, CourseService>();
+            services.AddScoped<ISubscriptionService, SubscriptionService>();
         }
     }
 }
