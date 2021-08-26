@@ -6,6 +6,4 @@ export class Mentor {
     biography:string | undefined;
     skills:string | undefined;
     imageUrl:string | undefined;
-    genderId:string | undefined;
-    url:string | undefined;
 }

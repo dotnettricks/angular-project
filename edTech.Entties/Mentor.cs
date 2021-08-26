@@ -16,7 +16,5 @@ namespace edTech.Entities
         public string Skills { get; set; }
         public string ImageUrl { get; set; }
         public bool IsActive { get; set; }
-        public int GenderId { get; set; }
-        public string Url{ get; set; }
     }
 }

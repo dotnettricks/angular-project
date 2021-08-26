@@ -30,7 +30,7 @@ namespace edTech.Repositories
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(@"data source=Shailendra\SqlExpress; initial catalog=edtech10AM;persist security info=True;user id=sa;password=dotnettricks;");
+                optionsBuilder.UseSqlServer(@"data source=Shailendra\SqlExpress; initial catalog=edtech;persist security info=True;user id=sa;password=dotnettricks;");
             }
             base.OnConfiguring(optionsBuilder);
         }
