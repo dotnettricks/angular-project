@@ -70,8 +70,7 @@ namespace edTech.Repositories.Implementations
                             UserId = order.UserId,
                             PaymentId=payment.Id,
                             CreatedDate = order.CreatedDate,
-                            GrandTotal = payment.GrandTotal,
-                            BillingAddress = order.BillingAddress
+                            GrandTotal = payment.GrandTotal
                         });
 
             int itemCounts = data.Count();
