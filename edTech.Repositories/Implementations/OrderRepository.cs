@@ -55,7 +55,7 @@ namespace edTech.Repositories.Implementations
         public IEnumerable<Order> GetUserOrders(int UserId)
         {
             return dbContext.Orders
-               .Include(o => o.OrderItems)
+               .Include(o => o.Items)
                .Where(x => x.UserId == UserId).ToList();
         }
         public PagingListModel<OrderModel> GetOrderList(int page, int pageSize)

@@ -54,7 +54,7 @@ namespace edTech.Services.Implementations
             foreach (var item in model.Items)
             {
                 OrderItem orderItem = new OrderItem { ItemId = item.ItemId, UnitPrice = item.UnitPrice, Quantity = item.Quantity, Total = item.Total };
-                order.OrderItems.Add(orderItem);
+                order.Items.Add(orderItem);
             }
 
             _orderRepo.Add(order);
