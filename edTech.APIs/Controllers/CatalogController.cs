@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
-
 namespace edTech.APIs.Controllers
 {
     [EnableCors("AllowAll")]

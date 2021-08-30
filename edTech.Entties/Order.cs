@@ -18,6 +18,5 @@ namespace edTech.Entities
         public string BillingAddress { get; set; }
         public DateTime CreatedDate { get; set; }
         public virtual ICollection<OrderItem> OrderItems { get; set; }
-        public string PhoneNumber { get; set; }
     }
 }

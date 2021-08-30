@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white box-shadow">
     <div>
-        <h2> <i class="bi bi-stack"></i> {{course.name}}</h2>
+        <h2><a [routerLink]="['/courses/',name]" style="text-decoration: none;" title="Go back"><i class="bi bi-stack"></i> {{course.name}}</a></h2>
     </div>
 </nav>
 
@@ -8,9 +8,7 @@
     <div class="row no-gutters">
         <div class="col-sm-9">
             <div class="embed-responsive embed-responsive-16by9">
-                <iframe class="embed-responsive-item" [src]="videoUrl | safe" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
+                <iframe class="embed-responsive-item" [src]="videoUrl | safe" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
         <div class="col-sm-3">
